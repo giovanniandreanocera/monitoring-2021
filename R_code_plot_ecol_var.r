@@ -17,3 +17,6 @@ head(meuse)
 summary(meuse)
 
 # Excercise: plot zinc (y) against cadmium (x)
+cadmium <-(11.7, 8.6, 6.5, 2.6, 2.8, 3.0)
+zinc (<-1022, 1141, 640, 257, 269, 281)
+plot(zinc, cadmium)
