@@ -13,4 +13,7 @@ View(meuse)
 # head is used to returns the first or last parts of a vector, matrix, table, data frame or function
 head(meuse)
 
- # Exercise: meaning of all of the variables
+# Exercise: meaning of all of the variables?
+summary(meuse)
+
+# Excercise: plot zinc (y) against cadmium (x)
