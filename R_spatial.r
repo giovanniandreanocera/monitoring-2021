@@ -65,7 +65,17 @@ ggplot(d, aes (x = biofuels, y = oxydative)) + geom_polygon()
 # setwd("path/lab")
 
 # setwd for Windows
-# setwd("C:/..../lab/") C:\Users\giova\OneDrive\Desktop\lab\
-setwd("C:/Users/giova/OneDrive/Desktop/lab/")
-covid <- 
+# setwd("C:/..../lab/")
+setwd("C:/lab/")
+covid <- read.table("covid_agg.csv", header=TRUE)
+covid
+head(covid)
 
+summary(covid)
+
+# ggplot2
+library(ggplot2)
+ggplot(covid, aes (x = lon, y = lat)) + geom_point()
+
+# changing the size of data
+ggplot(covid, aes (x = lon, y = lat, size=cases)) + geom_point()
