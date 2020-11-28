@@ -60,21 +60,55 @@ devoff()
 
 
 
-##########à
+##########
 head(covid)
 
-# interpolation
+
+########## Interpolate case data
 marks(covid_planar) <- cases
 cases_map <- Smooth(covid_planar)
     
 plot(cases_map, col = cl)
 points(covid_planar)
-plot(coastline, add = T)
+plot(coastline, add = TRUE)
 
-###### ERRORE
-#> plot(cases_map, col = cl)
-#> points(covid_planar)
-#> plot(coastline, add = T)
-#> plot(case_map)
-#Error in h(simpleError(msg, call)) : 
-#  error in evaluating the argument 'x' in selecting a method for function 'plot': oggetto "case_map" non trovato
+
+###### Plotting points with different size related to covid data together with the interpolated map
+# lab
+
+setwd("C:/lab/")
+
+library(spatstat)
+library(rgdal)
+
+covid <- read.table("covid_agg.csv", header=TRUE)
+head(covid)
+
+attach(covid)
+covid_planar <- ppp(lon, lat, c(-180,180), c(-90,90))
+
+marks(covid_planar) <- cases
+cases_map <- Smooth(covid_planar)
+
+# 0:25:01 del 27 Nov 
+
+
+
+
+
+
+################################################################
+install.packages("sf")
+library(sf)
+
+Spoints <- st_as_sf(covid, coords = c("lon", "lat"))
+
+cl <- colorRampPalette(c('lightpink2','lightsalmon','tomato1','red3','maroon'))(100)
+plot(cases_map, col = cl)
+plot(Spoints, cex=Spoints$cases/10000, col = 'purple3', lwd = 3, add=T)
+
+library(rgdal)
+# put a smoother to the coastlines by resampling
+coastline <- readOGR("ne_10m_coastline.shp")
+plot(coastline, add=T)
+
