@@ -115,3 +115,22 @@ plot(coastline, add=T)
 https://www.youtube.com/watch?v=Q6RrzJ7u_UU
 
 
+
+
+#################### Leo Zabotti data
+setwd("C:/lab/")
+leo <- read.table("dati_zabotti.csv", header=T, sep=",")
+head(leo)
+attach(leo)
+library(spatstat)
+summary(leo)
+leo_ppp <- ppp(x, y, c(2300000,2325000), c(5005000,5045000))
+plot(leo_ppp)
+density_map <- density(leo_ppp)
+plot(density_map)
+points(leo_ppp)
+
+
+
+
+####### Save r works
