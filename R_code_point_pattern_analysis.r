@@ -159,12 +159,50 @@ cl <- colorRampPalette(c('yellow','orange','red', 'green'))(100)
 plot(chlh_map, col=cl)
 points(leo_ppp)
 
+# Excercise: do the same for chls in the sediment
+marks(leo_ppp) <- chls
+
+chls_map <- Smooth(leo_ppp)
+plot(chls_map)
+points(leo_ppp)
+
+# change the color with cl <- colorRampPalette(c('col','col','col'))(100)
+cl <- colorRampPalette(c('azure','blue','green', 'yellow', 'orange', 'red', 'brown4'))(100)
+plot(chls_map, col=cl)
+points(leo_ppp)
 
 
+# multipanel
+# par R package function for multiframe [par(mfrow=c(1,3)) one row and 3 columns]
+par(mfrow=c(1,3))
+
+# first graph: density map
+plot(density_map, col=cl)
+points(leo_ppp)
+
+#second graph: chlh map
+plot(chlh_map, col=cl)
+points(leo_ppp)
+
+# third graph: chls map
+plot(chls_map, col=cl)
+points(leo_ppp)
 
 
+# Excercise: build a multipanel with 3 rows and 1 column
+par(mfrow=c(3,1))
 
+# first graph: density map
+plot(density_map, col=cl)
+points(leo_ppp)
 
+#second graph: chlh map
+plot(chlh_map, col=cl)
+points(leo_ppp)
+
+# third graph: chls map
+plot(chls_map, col=cl)
+points(leo_ppp)
 
 
 
