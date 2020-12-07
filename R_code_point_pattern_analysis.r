@@ -134,3 +134,38 @@ points(leo_ppp)
 
 
 ####### Save r works
+
+
+
+########## Interpolation of students' data
+
+setwd("C:/lab/")
+
+load("point_pattern_analysis.RData")
+ls() # list of file inside data
+
+head(leo)
+
+library(spatstat)
+attach (leo)
+marks(leo_ppp) <- chlh
+
+chlh_map <- Smooth(leo_ppp)
+plot(chlh_map)
+points(leo_ppp)
+
+# change the color with cl <- colorRampPalette(c('col','col','col'))(100)
+cl <- colorRampPalette(c('yellow','orange','red', 'green'))(100)
+plot(chlh_map, col=cl)
+points(leo_ppp)
+
+
+
+
+
+
+
+
+
+
+
