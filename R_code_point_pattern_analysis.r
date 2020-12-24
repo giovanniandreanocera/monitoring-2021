@@ -205,5 +205,8 @@ plot(chls_map, col=cl)
 points(leo_ppp)
 
 
+########### 11/12/20
+# Multivariate analysis
+
 
 
