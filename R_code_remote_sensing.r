@@ -35,7 +35,28 @@ clr <- colorRampPalette(c('dark red', 'red', 'pink')) (100)
 plot(p224r63_2011$B3_sre, col=clr)
 
 # change color to the fourth band (NIR)
-clNRI <- colorRampPalette(c('red', 'orange', 'yellow') (100)
-#
-plot(p224r63_2011$B4_sre, col=clNRI)
-                          
+clnir <- colorRampPalette(c('red', 'orange', 'yellow'))(100)
+
+plot(p224r63_2011$B4_sre, col=clnir)
+
+# cancel the previous part
+dev.off()
+
+# using RGB
+plotRGB(p224r63_2011, r=3, g=2, b= 1, stretch="Lin")
+
+# NIR in red
+plotRGB(p224r63_2011, r=4, g=3, b= 2, stretch="Lin")
+
+# NIR in green
+plotRGB(p224r63_2011, r=3, g=4, b= 2, stretch="Lin")
+
+# NIR in blue
+plotRGB(p224r63_2011, r=3, g=2, b= 4, stretch="Lin")
+
+# correlate all the graphs
+par(mfrow=c(2,2))
+plotRGB(p224r63_2011, r=3, g=2, b= 1, stretch="Lin")
+plotRGB(p224r63_2011, r=4, g=3, b= 2, stretch="Lin")
+plotRGB(p224r63_2011, r=3, g=4, b= 2, stretch="Lin")
+plotRGB(p224r63_2011, r=3, g=2, b= 4, stretch="Lin")
