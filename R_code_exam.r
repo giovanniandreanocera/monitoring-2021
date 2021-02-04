@@ -152,7 +152,7 @@ clmax2 <- colorRampPalette(c('blue', 'white', 'red'))(100)
 dev.off()
 plot(diff_ALB, col=clmax2, main="Albedo variation from 1999 to 2019")
 
-# Let’s put all together
+# Let’s put all together!
 par(mfrow=c(2,1))
 plot(diff_20yr, col=clmax, main="LAI")
 plot(diff_ALB, col=clmax2, main="Albedo")
