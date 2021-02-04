@@ -143,14 +143,13 @@ par(mfrow=c(2,1))
 plot(Afr_ALB_1999, col=clALB, main="avg Albedo 1999")
 plot(Afr_ALB_2019, col=clALB, main="avg Albedo 2019")
 
-# Differences in Albedo index between 1999 and 2019
+# Variation in Albedo index between 1999 and 2019
 diff_ALB <- (Afr_ALB_2019s - Afr_ALB_1999s)
 
 # Using clmax would enlight in red the lowest values: invert the colors
 clmax2 <- colorRampPalette(c('blue', 'white', 'red'))(100)
 #clean
 dev.off()
-
 plot(diff_ALB, col=clmax2, main="Albedo variation from 1999 to 2019")
 
 # Let’s put all together
