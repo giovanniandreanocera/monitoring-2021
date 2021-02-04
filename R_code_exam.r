@@ -87,7 +87,7 @@ grid(10, 11, col = "black", lty = "dotted", lwd = 1)
 plot(Afr_LAI_2019, col=cl, main="avg LAI 2019")
 grid(10, 11, col = "black", lty = "dotted", lwd = 1)
 
-# Using minus ( - ) function to find out the differences
+# Using minus ( - ) function to find out the variation
 diff_20yr <- (Afr_LAI_2019 - Afr_LAI_1999)
 dev.off()
 plot(diff_20yr)
