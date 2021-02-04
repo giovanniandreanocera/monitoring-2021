@@ -116,7 +116,7 @@ grid(10, 11, col = "black", lty = "dotted", lwd = 1)
 # Differences between 2018 and 2019: the desert is expanding to south
 diff_F <- (Afr_LAI_2019 - Afr_LAI_2018)
 dev.off()
-plot(diff_B, col=clmax, main="LAI variation 2018-2019")
+plot(diff_F, col=clmax, main="LAI variation 2018-2019")
 
 ########
 # Is there a correlation with differences in the Albedo index in the region during the 20yr period?
