@@ -113,7 +113,7 @@ grid(10, 11, col = "black", lty = "dotted", lwd = 1)
 plot(Afr_LAI_2019, col=cl, main="avg LAI 2019")
 grid(10, 11, col = "black", lty = "dotted", lwd = 1)
 
-# Differences between 2018 and 2019: the desert is actually expanding to south
+# Differences between 2018 and 2019: the desert is expanding to south
 diff_F <- (Afr_LAI_2019 - Afr_LAI_2018)
 dev.off()
 plot(diff_B, col=clmax, main="LAI variation 2018-2019")
