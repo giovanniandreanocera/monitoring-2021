@@ -88,14 +88,14 @@ plot(Afr_LAI_2019, col=cl, main="avg LAI 2019")
 grid(10, 11, col = "black", lty = "dotted", lwd = 1)
 
 # Using minus ( - ) function to find out the variation
-diff_20yr <- (Afr_LAI_2019 - Afr_LAI_1999)
+var_LAI <- (Afr_LAI_2019 - Afr_LAI_1999)
 dev.off()
-plot(diff_20yr)
+plot(var_LAI)
 
 # Let’s change colors to evidentiate the differences: using red to represent the desertification
 clmax <- colorRampPalette(c('red', 'white', 'blue'))(100)
 
-plot(diff_20yr, col=clmax, main="LAI variation 1999-2019")
+plot(var_LAI, col=clmax, main="LAI variation 1999-2019")
 
 # What would we see if confronting 2018 to 2019?
 LAI_2018s <- raster("c_gls_LAI-RT6_201808100000_GLOBE_PROBAV_V2.0.1.nc")
@@ -114,9 +114,9 @@ plot(Afr_LAI_2019, col=cl, main="avg LAI 2019")
 grid(10, 11, col = "black", lty = "dotted", lwd = 1)
 
 # Variation between 2018 and 2019
-diff_F <- (Afr_LAI_2019 - Afr_LAI_2018)
+var_LAIf <- (Afr_LAI_2019 - Afr_LAI_2018)
 dev.off()
-plot(diff_F, col=clmax, main="LAI variation 2018-2019")
+plot(var_LAIf, col=clmax, main="LAI variation 2018-2019")
 
 ########
 # Is there a correlation with differences in the Albedo index in the region during the 20yr period?
@@ -144,15 +144,15 @@ plot(Afr_ALB_1999, col=clALB, main="avg Albedo 1999")
 plot(Afr_ALB_2019, col=clALB, main="avg Albedo 2019")
 
 # Variation in Albedo index between 1999 and 2019
-diff_ALB <- (Afr_ALB_2019s - Afr_ALB_1999s)
+var_ALB <- (Afr_ALB_2019s - Afr_ALB_1999s)
 
 # Using clmax would enlight in red the lowest values: invert the colors
 clmax2 <- colorRampPalette(c('blue', 'white', 'red'))(100)
 #clean
 dev.off()
-plot(diff_ALB, col=clmax2, main="Albedo variation from 1999 to 2019")
+plot(var_ALB, col=clmax2, main="Albedo variation from 1999 to 2019")
 
 # Let’s put all together!
 par(mfrow=c(2,1))
-plot(diff_20yr, col=clmax, main="LAI")
-plot(diff_ALB, col=clmax2, main="Albedo")
+plot(var_LAI, col=clmax, main="LAI")
+plot(var_ALB, col=clmax2, main="Albedo")
