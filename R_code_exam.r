@@ -141,7 +141,10 @@ clALB <- colorRampPalette(c('black', 'yellow', 'white'))(100)
 # One above the other
 par(mfrow=c(2,1))
 plot(Afr_ALB_1999, col=clALB, main="avg Albedo 1999")
+grid(10, 11, col = "black", lty = "dotted", lwd = 1)
 plot(Afr_ALB_2019, col=clALB, main="avg Albedo 2019")
+grid(10, 11, col = "black", lty = "dotted", lwd = 1)
+
 
 # Variation in Albedo index between 1999 and 2019
 var_ALB <- (Afr_ALB_2019s - Afr_ALB_1999s)
