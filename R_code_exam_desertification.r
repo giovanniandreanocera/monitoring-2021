@@ -1,7 +1,7 @@
 # Recall the working directory
 setwd("C:/exam_lab")
 
-# We need a library capable to read nc files
+# Need a library capable to read nc files
 # install.packages("ncdf4")
 library(ncdf4)
 
@@ -71,7 +71,7 @@ plot(Afr_LAI_2011, col=cl, main="avg LAI 2011")
 plot(Afr_LAI_2015, col=cl, main="avg LAI 2015")
 plot(Afr_LAI_2019, col=cl, main="avg LAI 2019")
 
-# Let’s confront the longest term variation, 20 year: 1999-2019
+# Confront - the longest term variation, 20 year: 1999-2019
 # clean
 dev.off()
 
@@ -80,7 +80,7 @@ par(mfrow=c(2,1))
 plot(Afr_LAI_1999, col=cl, main="avg LAI 1999")
 plot(Afr_LAI_2019, col=cl, main="avg LAI 2019")
 
-# Let’s use a grid to better visualize the differences
+# Using a grid to better visualize the differences
 plot(Afr_LAI_1999, col=cl, main="avg LAI 1999")
 grid(10, 11, col = "black", lty = "dotted", lwd = 1)
 
@@ -92,7 +92,7 @@ var_LAI <- (Afr_LAI_2019 - Afr_LAI_1999)
 dev.off()
 plot(var_LAI)
 
-# Let’s change colors to evidentiate the differences: using red to represent the desertification
+# Changing colors to evidentiate the differences: using red to represent the desertification
 clmax <- colorRampPalette(c('red', 'white', 'blue'))(100)
 
 plot(var_LAI, col=clmax, main="LAI variation 1999-2019")
