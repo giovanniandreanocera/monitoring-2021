@@ -71,7 +71,7 @@ plot(Afr_LAI_2011, col=cl, main="avg LAI 2011")
 plot(Afr_LAI_2015, col=cl, main="avg LAI 2015")
 plot(Afr_LAI_2019, col=cl, main="avg LAI 2019")
 
-# Confront - the longest term variation, 20 year: 1999-2019
+# Confronting the longest term variation, 20 year: 1999-2019
 # clean
 dev.off()
 
